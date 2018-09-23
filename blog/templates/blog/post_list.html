@@ -1,6 +1,11 @@
+{% load staticfiles %}
 <html>
     <head>
         <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div>
@@ -9,7 +14,7 @@
 
         {% for record in records %}
         
-        <div>
+        <div class="post">
             <p>published: {{ record.published_date }}</p>
             <h3>Church name: <a href="#">{{ record.title }}</a></h3>
             <p><h3>Church address:</h3> {{ record.text|linebreaksbr }}</p>
