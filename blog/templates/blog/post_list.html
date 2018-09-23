@@ -12,7 +12,7 @@
         <div>
             <p>published: {{ record.published_date }}</p>
             <h3>Church name: <a href="#">{{ record.title }}</a></h3>
-            <h3>Church address:</h3> {{ record.text|linebreaksbr }}
+            <p><h3>Church address:</h3> {{ record.text|linebreaksbr }}</p>
             {% endfor %}
         </div>
     </body>
