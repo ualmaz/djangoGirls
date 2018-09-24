@@ -8,19 +8,24 @@
         <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div>
+        <div class="page-header">
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
-        {% for record in records %}
-        
-        <div class="post">
-            <div class="date">
-                <p>published: {{ record.published_date }}</p>
-            </div>
-            <h3>Church name: <a href="{% url 'post_detail' pk=record.pk %}">{{ record.title }}</a></h3>
-            <p><h3>Church address:</h3> {{ record.text|linebreaksbr }}</p>
-            {% endfor %}
+        <div class="content container">
+                <div class="row">
+                    <div class="col-md-8">
+                        {% for record in records %}
+                            <div class="post">
+                                <div class="date">
+                                    <p>published: {{ record.published_date }}</p>
+                                </div>
+                                <h3>Church name: <a href="{% url 'post_detail' pk=record.pk %}">{{ record.title }}</a></h3>
+                                <p><h3>Church address:</h3> {{ record.text|linebreaksbr }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
         </div>
     </body>
 </html>
