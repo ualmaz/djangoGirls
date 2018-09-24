@@ -1,0 +1,12 @@
+
+{% block content %}
+    <div class="post">
+        {% if record.published_date %}
+            <div class="date">
+                {{ record.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ record.title }}</h1>
+        <p>{{ record.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

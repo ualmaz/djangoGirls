@@ -15,8 +15,10 @@
         {% for record in records %}
         
         <div class="post">
-            <p>published: {{ record.published_date }}</p>
-            <h3>Church name: <a href="#">{{ record.title }}</a></h3>
+            <div class="date">
+                <p>published: {{ record.published_date }}</p>
+            </div>
+            <h3>Church name: <a href="{% url 'post_detail' pk=record.pk %}">{{ record.title }}</a></h3>
             <p><h3>Church address:</h3> {{ record.text|linebreaksbr }}</p>
             {% endfor %}
         </div>
